@@ -72,10 +72,11 @@ import UIKit
     stackView.spacing = 5.0
     addSubview(stackView)
     stackView.translatesAutoresizingMaskIntoConstraints = false
-    stackView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
-    stackView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
-    stackView.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
-    stackView.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
+    stackView.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor)
+//    stackView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
+//    stackView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+//    stackView.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
+//    stackView.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
   }
 
 }

@@ -94,21 +94,16 @@ struct Movie: Codable{
     }
     
     func getMovieForSearch(_ searchText: String) -> Bool{
-        return (
-            trimAndLowercases(genre ?? "").contains(searchText) ||
-            trimAndLowercases(actors ?? "").contains(searchText) ||
-            trimAndLowercases(director ?? "").contains(searchText) ||
-            trimAndLowercases(title ?? "").contains(searchText))
+        return trimAndLowercases(title ?? "").starts(with: searchText)
     }
     
     private func filterYearData(_ normalText: String) -> [String]{
         let year =  normalText.split(separator: "–").map { String($0.trimmingCharacters(in: .punctuationCharacters))}
-        print(year)
         return year
     }
     
     private func filterOtherDataExceptYear(_ normalText:String) ->[String] {
-        let filterdData = normalText.split(separator: ",").map { String($0.trimmingCharacters(in: .punctuationCharacters) ) }
+        let filterdData = normalText.split(separator: ",").map { String($0.trimmingCharacters(in: .punctuationCharacters) )}
         return filterdData
     }
     
